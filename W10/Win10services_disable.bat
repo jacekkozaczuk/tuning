@@ -50,3 +50,8 @@ REM デバイス管理登録サービス
 sc config DmEnrollmentSvc start=disabled
 REM 市販デモ サービス
 sc config RetailDemo start=disabled
+sc config BITs start=disabled
+sc config DiagTrack start=disabled
+sc config dmwappushservice start=disabled
+echo “” > C:\\ProgramData\\Microsoft\\Diagnosis\\ETLLogs\\AutoLogger\\AutoLogger-Diagtrack-Listener.etl
+reg add “HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\DataCollection” /v AllowTelemetry /t REG_DWORD /d 0 /f
